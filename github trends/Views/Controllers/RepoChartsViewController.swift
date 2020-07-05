@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class RepoChartsViewController: UIViewController {
     
@@ -106,4 +107,23 @@ extension RepoChartsViewController: UICollectionViewDelegate, UICollectionViewDa
         .init(width: collectionView.frame.width - 16 * 2, height: 180)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let item = viewModel.getRepo(for: indexPath.row),
+            let urlString = item.url,
+            let url = URL(string: urlString) {
+            let controller = SFSafariViewController(url: url)
+            controller.dismissButtonStyle = .close
+            controller.configuration.barCollapsingEnabled = true
+            controller.modalTransitionStyle = .coverVertical
+            self.present(controller, animated: true, completion: nil)
+            controller.delegate = self
+        }
+    }
+    
+}
+
+extension RepoChartsViewController: SFSafariViewControllerDelegate {
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        controller.dismiss(animated: true, completion: nil)
+    }
 }
