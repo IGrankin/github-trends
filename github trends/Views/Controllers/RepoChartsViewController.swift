@@ -8,6 +8,7 @@
 
 import UIKit
 import SafariServices
+import Kingfisher
 
 class RepoChartsViewController: UIViewController {
     
@@ -99,6 +100,11 @@ extension RepoChartsViewController: UICollectionViewDelegate, UICollectionViewDa
         cell.repoNameLabel.text = model?.repoName
         cell.repoAuthorLabel.text = model?.username
         cell.repoDescLabel.text = model?.repoDesc
+        if let imageURL = model?.avatar, let url = URL(string: imageURL) {
+            cell.logoImageView.kf.setImage(with: url)
+        } else {
+            cell.logoImageView.image = nil
+        }
         return cell
     }
     
