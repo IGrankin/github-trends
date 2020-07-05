@@ -17,6 +17,7 @@ class RepoChartsViewController: UIViewController {
     let cellName = "repoCell"
     let cellXibName = "RepositoryCell"
     var viewModel: RepositoryViewModelProtocol!
+    var spinner = UIActivityIndicatorView(style: .large)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +30,11 @@ class RepoChartsViewController: UIViewController {
         
         setupSegmentControl()
         setupCollectionView()
+        setupIndicator()
         
         viewModel.newReposLoaded.bind { (success) in
             self.collectionView.reloadData()
+            self.hideLoadingIndicator()
         }
         viewModel.loadRepos()
     }
@@ -59,7 +62,36 @@ class RepoChartsViewController: UIViewController {
     }
     
     @objc func segmentControllChanged(segment: UISegmentedControl) {
+        showLoadingIndicator()
         viewModel.timePeriodWasChanged(to: segment.selectedSegmentIndex)
+    }
+    
+    func setupIndicator() {
+        spinner.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(spinner)
+        NSLayoutConstraint.activate([
+            spinner.centerXAnchor.constraint(equalTo: collectionView.centerXAnchor),
+            spinner.centerYAnchor.constraint(equalTo: collectionView.centerYAnchor)
+        ])
+        spinner.isHidden = true
+    }
+    
+    func showLoadingIndicator() {
+        collectionView.isUserInteractionEnabled = false
+        spinner.startAnimating()
+        UIView.animate(withDuration: 0.1) {
+            self.spinner.isHidden = false
+            self.collectionView.alpha = 0.5
+        }
+    }
+    
+    func hideLoadingIndicator() {
+        collectionView.isUserInteractionEnabled = true
+        spinner.startAnimating()
+        UIView.animate(withDuration: 0.1) {
+            self.spinner.isHidden = true
+            self.collectionView.alpha = 1.0
+        }
     }
 }
 
