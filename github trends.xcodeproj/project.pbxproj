@@ -9,13 +9,13 @@
 /* Begin PBXBuildFile section */
 		846DB81624B1C35700FBE9EA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB81524B1C35700FBE9EA /* AppDelegate.swift */; };
 		846DB81824B1C35700FBE9EA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB81724B1C35700FBE9EA /* SceneDelegate.swift */; };
-		846DB81A24B1C35700FBE9EA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB81924B1C35700FBE9EA /* ViewController.swift */; };
-		846DB81D24B1C35700FBE9EA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846DB81B24B1C35700FBE9EA /* Main.storyboard */; };
 		846DB82024B1C35700FBE9EA /* github_trends.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 846DB81E24B1C35700FBE9EA /* github_trends.xcdatamodeld */; };
 		846DB82224B1C35900FBE9EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846DB82124B1C35900FBE9EA /* Assets.xcassets */; };
 		846DB82524B1C35900FBE9EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846DB82324B1C35900FBE9EA /* LaunchScreen.storyboard */; };
 		846DB83024B1C35900FBE9EA /* github_trendsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB82F24B1C35900FBE9EA /* github_trendsTests.swift */; };
 		846DB83B24B1CA8800FBE9EA /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846DB83A24B1CA8800FBE9EA /* RepositoryCell.xib */; };
+		846DB83D24B1E92300FBE9EA /* RepoChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB83C24B1E92300FBE9EA /* RepoChartsViewController.swift */; };
+		846DB84124B1F58D00FBE9EA /* RepositoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB84024B1F58D00FBE9EA /* RepositoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,8 +32,6 @@
 		846DB81224B1C35700FBE9EA /* github trends.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "github trends.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		846DB81524B1C35700FBE9EA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		846DB81724B1C35700FBE9EA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		846DB81924B1C35700FBE9EA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		846DB81C24B1C35700FBE9EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		846DB81F24B1C35700FBE9EA /* github_trends.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = github_trends.xcdatamodel; sourceTree = "<group>"; };
 		846DB82124B1C35900FBE9EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		846DB82424B1C35900FBE9EA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -42,6 +40,8 @@
 		846DB82F24B1C35900FBE9EA /* github_trendsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = github_trendsTests.swift; sourceTree = "<group>"; };
 		846DB83124B1C35900FBE9EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		846DB83A24B1CA8800FBE9EA /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
+		846DB83C24B1E92300FBE9EA /* RepoChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoChartsViewController.swift; sourceTree = "<group>"; };
+		846DB84024B1F58D00FBE9EA /* RepositoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepositoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,13 +85,13 @@
 			children = (
 				846DB81524B1C35700FBE9EA /* AppDelegate.swift */,
 				846DB81724B1C35700FBE9EA /* SceneDelegate.swift */,
-				846DB81924B1C35700FBE9EA /* ViewController.swift */,
-				846DB81B24B1C35700FBE9EA /* Main.storyboard */,
 				846DB82124B1C35900FBE9EA /* Assets.xcassets */,
 				846DB82324B1C35900FBE9EA /* LaunchScreen.storyboard */,
 				846DB82624B1C35900FBE9EA /* Info.plist */,
 				846DB81E24B1C35700FBE9EA /* github_trends.xcdatamodeld */,
 				846DB83A24B1CA8800FBE9EA /* RepositoryCell.xib */,
+				846DB83C24B1E92300FBE9EA /* RepoChartsViewController.swift */,
+				846DB84024B1F58D00FBE9EA /* RepositoryCell.swift */,
 			);
 			path = "github trends";
 			sourceTree = "<group>";
@@ -188,7 +188,6 @@
 			files = (
 				846DB82524B1C35900FBE9EA /* LaunchScreen.storyboard in Resources */,
 				846DB82224B1C35900FBE9EA /* Assets.xcassets in Resources */,
-				846DB81D24B1C35700FBE9EA /* Main.storyboard in Resources */,
 				846DB83B24B1CA8800FBE9EA /* RepositoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -207,10 +206,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				846DB84124B1F58D00FBE9EA /* RepositoryCell.swift in Sources */,
 				846DB82024B1C35700FBE9EA /* github_trends.xcdatamodeld in Sources */,
-				846DB81A24B1C35700FBE9EA /* ViewController.swift in Sources */,
 				846DB81624B1C35700FBE9EA /* AppDelegate.swift in Sources */,
 				846DB81824B1C35700FBE9EA /* SceneDelegate.swift in Sources */,
+				846DB83D24B1E92300FBE9EA /* RepoChartsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,14 +233,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		846DB81B24B1C35700FBE9EA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				846DB81C24B1C35700FBE9EA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		846DB82324B1C35900FBE9EA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
