@@ -35,7 +35,8 @@ class RepoChartsViewController: UIViewController {
     }
     
     func setupViewModel() {
-        let itemsRepo = TestRepository()
+//        let itemsRepo = TestRepository()
+        let itemsRepo = GithubRepository()
         viewModel = RepositoryViewModel(itemsRepo: itemsRepo)
     }
     
@@ -43,7 +44,7 @@ class RepoChartsViewController: UIViewController {
     
     func setupSegmentControl() {
         segmentColtrol = UISegmentedControl(items: viewModel.getTimePeriods())
-        segmentColtrol.selectedSegmentIndex = 0
+        segmentColtrol.selectedSegmentIndex = viewModel.getLastChosenTimePeriod()
         segmentColtrol.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(segmentColtrol)
         NSLayoutConstraint.activate([

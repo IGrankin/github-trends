@@ -10,17 +10,17 @@ import Foundation
 
 public struct RepositoryModel: Decodable {
     var username: String?
-    var avatar: URL?
+    var avatar: String?
     var repoName: String?
     var repoDesc: String?
-    var url: URL?
+    var url: String?
     
     enum CodingKeys: String, CodingKey {
-        case username
+        case username = "author"
         case avatar
-        case repoName = "repo.name"
-        case repoDesc = "repo.description"
-        case url = "repo.url"
+        case repoName = "name"
+        case repoDesc = "description"
+        case url
         
     }
     
@@ -28,10 +28,10 @@ public struct RepositoryModel: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
 
          self.username = try? container.decode(String.self, forKey: .username)
-         self.avatar = try? container.decode(URL.self, forKey: .avatar)
+         self.avatar = try? container.decode(String.self, forKey: .avatar)
          self.repoName = try? container.decode(String.self, forKey: .repoName)
          self.repoDesc = try? container.decode(String.self, forKey: .repoDesc)
-         self.url = try? container.decode(URL.self, forKey: .url)
+         self.url = try? container.decode(String.self, forKey: .url)
 
     }
     

@@ -11,13 +11,20 @@ import Foundation
 class RepositoryViewModel: RepositoryViewModelProtocol {
     var newReposLoaded: Dynamic<Bool> = Dynamic(true)
     
-    
+    var ud: UserDefaults = UserDefaults.standard
+    let udKey: String = "lastChosen"
     var items: [RepositoryModel]?
     var repository: RepositoryProtocol!
-    var lastChosen: TimePeriod = .weekly
+    var lastChosen: TimePeriod {
+        willSet  {
+            self.ud.set(newValue.rawValue, forKey: self.udKey)
+        }
+    }
     
     required init(itemsRepo: RepositoryProtocol) {
         repository = itemsRepo
+        let valueFromUD = ud.integer(forKey: udKey)
+        lastChosen = TimePeriod(rawValue: valueFromUD) ?? .daily
     }
     
     func getRepo(for index: Int) -> RepositoryModel? {
