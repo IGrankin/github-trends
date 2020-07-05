@@ -24,9 +24,6 @@ class RepositoryCell: UICollectionViewCell {
             
             layer.cornerRadius = 8;
             layer.masksToBounds = true;
-    //        cellView.roundCorners(topLeft: 8, topRight: 8)
-//            cellView.roundCorners(topLeft: 16, topRight: 16, bottomLeft: 16, bottomRight: 16)
-    //        openButtonContainerView.roundCorners(topRight: 16, bottomLeft: 16)
         }
         
         override func prepareForReuse() {

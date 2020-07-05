@@ -14,6 +14,7 @@ class RepoChartsViewController: UIViewController {
     var segmentColtrol: UISegmentedControl!
     let cellName = "repoCell"
     let cellXibName = "RepositoryCell"
+    var viewModel: RepositoryViewModelProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,12 +23,26 @@ class RepoChartsViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
         
+        setupViewModel()
+        
         setupSegmentControl()
         setupCollectionView()
+        
+        viewModel.newReposLoaded.bind { (success) in
+            self.collectionView.reloadData()
+        }
+        viewModel.loadRepos()
     }
     
+    func setupViewModel() {
+        let itemsRepo = TestRepository()
+        viewModel = RepositoryViewModel(itemsRepo: itemsRepo)
+    }
+    
+    //MARK: UI setup
+    
     func setupSegmentControl() {
-        segmentColtrol = UISegmentedControl(items: ["Daily", "Weekly", "Montly"])
+        segmentColtrol = UISegmentedControl(items: viewModel.getTimePeriods())
         segmentColtrol.selectedSegmentIndex = 0
         segmentColtrol.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(segmentColtrol)
@@ -36,6 +51,12 @@ class RepoChartsViewController: UIViewController {
             segmentColtrol.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 48),
             segmentColtrol.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -48)
         ])
+        
+        segmentColtrol.addTarget(self, action: #selector(segmentControllChanged(segment:)), for: .valueChanged)
+    }
+    
+    @objc func segmentControllChanged(segment: UISegmentedControl) {
+        viewModel.timePeriodWasChanged(to: segment.selectedSegmentIndex)
     }
 }
 
@@ -67,11 +88,15 @@ extension RepoChartsViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return viewModel.getRepoCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: RepositoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: cellName, for: indexPath) as! RepositoryCell
+        let model = viewModel.getRepo(for: indexPath.row)
+        cell.repoNameLabel.text = model?.repoName
+        cell.repoAuthorLabel.text = model?.username
+        cell.repoDescLabel.text = model?.repoDesc
         return cell
     }
     
