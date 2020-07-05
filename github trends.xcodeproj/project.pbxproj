@@ -15,6 +15,7 @@
 		846DB82224B1C35900FBE9EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 846DB82124B1C35900FBE9EA /* Assets.xcassets */; };
 		846DB82524B1C35900FBE9EA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 846DB82324B1C35900FBE9EA /* LaunchScreen.storyboard */; };
 		846DB83024B1C35900FBE9EA /* github_trendsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846DB82F24B1C35900FBE9EA /* github_trendsTests.swift */; };
+		846DB83B24B1CA8800FBE9EA /* RepositoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846DB83A24B1CA8800FBE9EA /* RepositoryCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		846DB82B24B1C35900FBE9EA /* github trendsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "github trendsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		846DB82F24B1C35900FBE9EA /* github_trendsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = github_trendsTests.swift; sourceTree = "<group>"; };
 		846DB83124B1C35900FBE9EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		846DB83A24B1CA8800FBE9EA /* RepositoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepositoryCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				846DB82324B1C35900FBE9EA /* LaunchScreen.storyboard */,
 				846DB82624B1C35900FBE9EA /* Info.plist */,
 				846DB81E24B1C35700FBE9EA /* github_trends.xcdatamodeld */,
+				846DB83A24B1CA8800FBE9EA /* RepositoryCell.xib */,
 			);
 			path = "github trends";
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				846DB82524B1C35900FBE9EA /* LaunchScreen.storyboard in Resources */,
 				846DB82224B1C35900FBE9EA /* Assets.xcassets in Resources */,
 				846DB81D24B1C35700FBE9EA /* Main.storyboard in Resources */,
+				846DB83B24B1CA8800FBE9EA /* RepositoryCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
